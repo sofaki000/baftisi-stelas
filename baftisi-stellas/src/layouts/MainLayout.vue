@@ -57,13 +57,13 @@ const linksList = [
   {
     title: 'Πληφοροφίες',
     caption: 'Τοποθεσία βάφτισης, επικοινωνήστε μαζί μας',
-    icon: 'event',
+    icon: 'flowerMenuBtn.png',
     link: 'http://localhost:9000/#/information'
   },
   {
     title: 'Αποδεχτείται την πρόσκληση',
     caption: 'Πείτε μας αν θα μπορέσετε να έρθετε για να υπολογίσουμε τον αριθμό των καλεσμένων',
-    icon: 'done',
+    icon: 'flowerMenuBtn.png',
     link: 'http://localhost:9000/#/decision'
   },
   

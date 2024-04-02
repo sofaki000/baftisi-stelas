@@ -1,26 +1,5 @@
 <template>
-    <div class="q-pa-md flex flex-center" style="max-width: 100%">
-  
-        <q-form
-        style="width: 500%"
-        @submit="onSubmitCode" 
-      >
-      <q-input
-          filled
-          v-model="inviteCode"
-          label="Κωδικός πρόσκλησης"
-          hint="Πληκτρολογήστε τον κωδικό πρόσκλησή σας. Αν έχετε έγκυρο κωδικό θα μπορείτε να δείτε τα στοιχεία της βάφτισης"
-          outlined 
-          lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Παρακαλώ πληκτρολογήστε τον κωδικό πρόσκλησή σας ώστε να καταγράψουμε την απάντησή σας. Αν έχετε έγκυρο κωδικό θα μπορείτε να δείτε τα στοιχεία της βάφτισης']"
-        />
-
-        <div class="q-mt-md q-pb-md">
-          <q-btn    label="Επιβεβαίωση κωδικού" type="submit" color="primary"/> 
-        </div>
-      </q-form>
-
-
+    <div class="q-pa-md flex flex-center" style="max-width: 100%"> 
       <q-form
         @submit="onSubmit"
         @reset="onReset"
@@ -28,8 +7,7 @@
         class="q-gutter-md q-pt-md q-pb-md"
       >
       
-        <q-input
-          filled
+        <q-input 
           v-model="name"
           label="Όνομα"
           hint="Το ονοματεπώνυμο της οικογένειάς σας"
@@ -38,8 +16,7 @@
           :rules="[ val => val && val.length > 0 || 'Παρακαλώ πληκτρολογήστε το όνομα της οικογένειας σας ώστε να ξέρουμε ποιοί είστε']"
         />
   
-        <q-input
-          filled
+        <q-input 
           class="q-pt-md q-pb-md"
           type="number"
           outlined 
@@ -81,30 +58,19 @@
   
   export default {
     setup () {
-
-        let invited = false
+ 
       const $q = useQuasar() 
       const name = ref(null)
       const age = ref(null)
-      const inviteCode = ""
+      const invited = localStorage.getItem("invited");
       const accept = ref(false)
   
       return {
         name,
         age,
         accept,
-        invited,
-        inviteCode,
-
-        onSubmitCode(){
-
-            console.log(invited)
-            if(inviteCode=="INVITED") {
-                invited = true;
-            }else{
-                invited =false;
-            }
-        },
+        invited, 
+  
         getDecisionLagel(){
 
             console.log(accept)

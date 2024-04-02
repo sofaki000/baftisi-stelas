@@ -5,11 +5,13 @@
     target="_blank"
     :href="props.link"
   >
+
+  
     <q-item-section
       v-if="props.icon"
       avatar
-    >
-      <q-icon :name="props.icon" />
+    > 
+    <q-img :src="imageName"/> 
     </q-item-section>
 
     <q-item-section> 
@@ -19,13 +21,17 @@
   </q-item>
 </template>
 
-<script setup>
-defineOptions({
-  name: 'EssentialLink'
-})
+<script  >
 
-const props = defineProps({
-  title: {
+export default{
+  name: 'EssentialLink',
+  computed:{
+    imageName(){
+      return $`../assets/` + this.props.icon
+    }
+  }, 
+  props:{
+    title: {
     type: String,
     required: true
   },
@@ -44,5 +50,7 @@ const props = defineProps({
     type: String,
     default: ''
   }
-})
+  }
+} 
+ 
 </script>
