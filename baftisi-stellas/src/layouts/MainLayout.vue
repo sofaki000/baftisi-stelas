@@ -9,8 +9,7 @@
           icon="menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
-        />
-
+        /> 
         <q-toolbar-title>
           Βάφτιση της Στέλας
         </q-toolbar-title>
