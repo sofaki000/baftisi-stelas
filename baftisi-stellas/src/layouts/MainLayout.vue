@@ -15,7 +15,7 @@
           Βάφτιση της Στέλας
         </q-toolbar-title>
 
-        <div>Θα χαρούμε να σας δούμε εκεί!</div>
+       
       </q-toolbar>
     </q-header>
 
@@ -57,13 +57,13 @@ const linksList = [
   {
     title: 'Πληφοροφίες',
     caption: 'Τοποθεσία βάφτισης, επικοινωνήστε μαζί μας',
-    icon: 'flowerMenuBtn.png',
+    icon: 'src/assets/flowerMenuBtn.png',
     link: 'http://localhost:9000/#/information'
   },
   {
     title: 'Αποδεχτείται την πρόσκληση',
     caption: 'Πείτε μας αν θα μπορέσετε να έρθετε για να υπολογίσουμε τον αριθμό των καλεσμένων',
-    icon: 'flowerMenuBtn.png',
+    icon: 'src/assets/flowerMenuBtn2.png',
     link: 'http://localhost:9000/#/decision'
   },
   

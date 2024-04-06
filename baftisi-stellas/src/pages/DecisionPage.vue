@@ -1,62 +1,19 @@
-<template>
-    <div class="q-pa-md flex flex-center" style="max-width: 100%"> 
-      <q-form
-        @submit="onSubmit"
-        @reset="onReset"
-        v-if="invited"
-        class="q-gutter-md q-pt-md q-pb-md"
-      >
-      
-        <q-input 
-          v-model="name"
-          label="Όνομα"
-          hint="Το ονοματεπώνυμο της οικογένειάς σας"
-          outlined 
-          lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Παρακαλώ πληκτρολογήστε το όνομα της οικογένειας σας ώστε να ξέρουμε ποιοί είστε']"
-        />
-  
-        <q-input 
-          class="q-pt-md q-pb-md"
-          type="number"
-          outlined 
-          v-model.number="age" 
-          label="Αριθμός ατόμων"
-          lazy-rules
-          :rules="[
-            val => val !== null && val !== '' || 'Παρακαλώ πληκτρολογήστε τον αριθμό των ατόμων που θα έρθουν στην βάφτιση',
-            val => val > 0 && val < 100 || 'Δεν μπορείτε να προσκαλέσετε τόσα άτομα'
-          ]"
-        />
-  
-        <div> 
-        <q-toggle v-model="accept" :label="getDecisionLagel()"/>
-
-       
-    </div>
-        <div class="q-pt-md q-pb-md" style="max-width: 100%">
-    <q-input
-      v-model="text"
-      filled
-          label="Μήνυμα προς την οικογένεια (προαιρετικό)"
-      type="textarea"
-    />
-  </div>
-
-        <div>
-          <q-btn label="Αποστολή απάντησης" type="submit" color="primary"/>
-          <q-btn label="Διαγραφή στοιχείων" type="reset" color="primary" flat class="q-ml-sm" />
-        </div>
-      </q-form>
-  
-    </div>
+<template> 
+<q-page class="flex page">
+    <q-img src="~assets/acceptanceForm.png">  
+     
+     <acceptange-form />  
+    </q-img>
+    </q-page>
   </template>
   
   <script>
   import { useQuasar } from 'quasar'
   import { ref } from 'vue'
+import AcceptangeForm from 'src/components/AcceptangeForm.vue'
   
   export default {
+  components: { AcceptangeForm },
     setup () {
  
       const $q = useQuasar() 

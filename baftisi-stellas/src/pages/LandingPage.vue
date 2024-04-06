@@ -1,31 +1,21 @@
 <template>  
-  <q-page  class="flex flex-center">
+  <q-page class="flex flex-start page">
     <img 
       alt="Quasar logo"
-      src="~assets/frontPage.png"
-      style="width: 70%; height: 100%; object-fit: cover;"
+      src="~assets/landingPage.jpg"
+      style="width: 100%; height: 100%;"
     > 
-  </q-page>
-  
+  </q-page> 
 </template>
 
 <script>
  
-export default {
-  // Properties returned from data() become reactive state
-  // and will be exposed on `this`.
+export default { 
   data() {
-    return {
-      count: 0,
+    return { 
       invited: false
     }
-  }, 
-   
-  methods: {
-    increment() {
-      this.count++
-    }
-  },
+  },  
 
   // Lifecycle hooks are called at different stages
   // of a component's lifecycle.
@@ -36,3 +26,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+.page{
+  background-color: rgb(250 248 251);
+}
+</style>
